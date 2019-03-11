@@ -8,12 +8,9 @@ public class PlayList implements Playable {
 
     public PlayList() {
         mode = Mode.LOOP;
-
     }
 
-
     public PlayList(Mode mode, Playable... tracks) {
-
         this.mode = mode;
         for (Playable playable : tracks) {
             playList.add(playable);
@@ -21,7 +18,6 @@ public class PlayList implements Playable {
     }
 
     public void play() {
-
         switch (mode) {
             case SEQUENT:
                 sequentialMode();
@@ -33,7 +29,6 @@ public class PlayList implements Playable {
                 shuffledMode();
                 break;
         }
-
     }
 
     private void sequentialMode() {
@@ -50,16 +45,13 @@ public class PlayList implements Playable {
 
     private void shuffledMode() {
         List<Playable> forRandomPlayList = new ArrayList<>(playList);
-
         int pool = forRandomPlayList.size();
 
         for (int i = 0; i < playList.size(); i++) {
             int trackIndex = (int) (Math.random() * pool--);
             forRandomPlayList.remove(trackIndex).play();
         }
-
     }
-
 
     public void addToPlayList(Playable playable) {
         playList.add(playable);
@@ -68,6 +60,5 @@ public class PlayList implements Playable {
     public void setMode(Mode mode) {
         this.mode = mode;
     }
-
 
 }

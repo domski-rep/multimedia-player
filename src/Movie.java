@@ -1,4 +1,4 @@
-public class Movie extends Track implements Playable{
+public class Movie extends Track implements Playable {
 
     public Movie(String name) {
         super(name);
@@ -15,7 +15,7 @@ public class Movie extends Track implements Playable{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Film: " + super.toString();
     }
 }
